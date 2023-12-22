@@ -9,6 +9,7 @@ import { UntypedFormGroup } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  [x: string]: any;
   title = 'my-swapi-project';
   films: any;
   people: any;

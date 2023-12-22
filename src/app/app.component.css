@@ -1,0 +1,37 @@
+/* Style pour le conteneur principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Style pour chaque section (Films, People, Planets, etc.) */
+  .data-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0; /* Couleur de fond */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  }
+  
+  /* Style pour les titres (h2) */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour chaque cadre de données */
+  .data-frame {
+    background-color: #ffffff; /* Couleur de fond pour chaque cadre */
+    border: 1px solid #ccc; /* Bordure */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style pour les éléments (p) à l'intérieur des cadres de données */
+  .data-frame p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
