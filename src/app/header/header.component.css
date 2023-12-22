@@ -1,21 +1,39 @@
-/* Add this CSS to your stylesheet */
-.nav-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Make the list items flex items */
-  }
-  
-  .nav-menu li {
-    margin-right: 20px; /* Adjust the spacing between menu items */
-  }
-  
-  .nav-menu li:last-child {
-    margin-right: 0; /* Remove margin for the last item to avoid extra spacing */
-  }
-  
-  .nav-menu a {
-    text-decoration: none;
-    color: #333; /* Set the desired text color */
-  }
-  
+header {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+}
+
+header img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+}
