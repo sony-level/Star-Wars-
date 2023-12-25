@@ -1,6 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { APIService } from '../../services/api.service';
-import { UntypedFormGroup } from '@angular/forms';
+import { Observable, forkJoin, map } from 'rxjs';
 
 
 @Component({
@@ -22,41 +22,35 @@ export class AppComponent implements OnInit {
   constructor(private Service: APIService) {
      this.getAllData();
   }
- 
-  getAllData() {
-     this.Service.getFilms().subscribe(data => {
-       console.log('Films:', data);
-       this.films = data.results; // Fix: Assign the results to the films variable
-     });
- 
-     this.Service.getPeople().subscribe(data => {
-       console.log('People:', data);
-       this.people = data.results; // Fix: Assign the results to the people variable
-     });
- 
-     this.Service.getPlanets(1).subscribe(data => {
-       console.log('Planets:', data);
-       this.planets = data.results; // Fix: Assign the results to the planets variable
-     });
- 
-     this.Service.getStarships().subscribe(data => {
-       console.log('starships:', data);
-       this.starships = data.results; // Fix: Assign the results to the starships variable
-     });
- 
-     this.Service.getVehicles().subscribe(data => {
-       console.log('Vehicles:', data);
-       this.vehicles = data.results; // Fix: Assign the results to the vehicles variable
-     });
- 
-     this.Service.getSpecies(1).subscribe(data => {
-       console.log('Species:', data);
-       this.species = data.results; // Fix: Assign the results to the species variable
-     });
-  }
- 
+
   ngOnInit() {
-     this.getAllData();
+     this.getAllData().subscribe(this.data);
+  }
+
+  getAllData(): Observable<any> {
+     return forkJoin([
+       this.Service.getFilms(),
+       this.Service.getPeople(),
+       this.Service.getPlanets(1),
+       this.Service.getStarships(),
+       this.Service.getVehicles(),
+       this.Service.getSpecies(1)
+     ]).pipe(
+       map(([films, people, planets, starships, vehicles, species]: [any, any, any, any, any, any]) => {
+         console.log('Films:', films);
+         console.log('People:', people);
+         console.log('Planets:', planets);
+         console.log('Starships:', starships);
+         console.log('Vehicles:', vehicles);
+         console.log('Species:', species);
+         this.films = films.results;
+         this.people = people.results;
+         this.planets = planets.results;
+         this.starships = starships.results;
+         this.vehicles = vehicles.results;
+         this.species = species.results;
+       })
+     );
   }
 
 }

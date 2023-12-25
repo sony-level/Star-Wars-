@@ -10,24 +10,8 @@ import { APIService } from '../../../services/api.service'
 })
 export class HomeComponent implements OnInit{
 
-  films: any;
-  people: any;
-  planets: any;
-  starships: any;
-  vehicles: any;
-  species: any;
-  constructor(private appComponent: AppComponent) { }
-
-
-
+  constructor() { }
 
   ngOnInit() {
-    // Vous pouvez maintenant appeler les fonctions de AppComponent ici
-    this.films = this.appComponent['getFilms']();
-    this.people = this.appComponent['getPeople']();
-    this.planets = this.appComponent['getPlanets']();
-    this.starships = this.appComponent['getStarships']();
-    this.vehicles = this.appComponent['getVehicles']();
-    this.species = this.appComponent['getSpecies']();
   }
 }

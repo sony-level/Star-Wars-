@@ -1,1 +1,30 @@
 <p>body works!</p>
+<div *ngFor="let person of peopleData" class="person-card">
+    <h2>{{ person.name }}</h2>
+    <p>Height: {{ person.height }}</p>
+    <p>Mass: {{ person.mass }}</p>
+    <p>Hair Color: {{ person.hair_color }}</p>
+    <p>Skin Color: {{ person.skin_color }}</p>
+    <p>Eye Color: {{ person.eye_color }}</p>
+    <p>Birth Year: {{ person.birth_year }}</p>
+    <p>Gender: {{ person.gender }}</p>
+    <!-- Add other properties as needed -->
+    <p>Films:</p>
+    <ul>
+      <li *ngFor="let film of person.films">
+        <a [href]="film">{{ film }}</a>
+      </li>
+    </ul>
+    <p>Vehicles:</p>
+    <ul>
+      <li *ngFor="let vehicle of person.vehicles">
+        <a [href]="vehicle">{{ vehicle }}</a>
+      </li>
+    </ul>
+    <p>Starships:</p>
+    <ul>
+      <li *ngFor="let starship of person.starships">
+        <a [href]="starship">{{ starship }}</a>
+      </li>
+    </ul>
+  </div>
