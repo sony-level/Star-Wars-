@@ -1,1 +1,14 @@
-<p>people works!</p>
+<div *ngIf="people">
+    <h2>People</h2>
+    <div class="user-container">
+      <div class="user-card" *ngFor="let person of people; let i = index" [class.active]="i === currentIndex">
+        <h3>{{person.name}}</h3>
+        <p>Height: {{person.height}}</p>
+        <p>Mass: {{person.mass}}</p>
+        <p>Gender: {{person.gender}}</p>
+        <p>Birth Year: {{person.birth_year}}</p>
+      </div>
+    </div>
+    <button (click)="showNextUser()">Next User</button>
+  </div>
+  

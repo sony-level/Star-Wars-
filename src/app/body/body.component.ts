@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { APIService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-body',
@@ -7,13 +6,12 @@ import { APIService } from '../../../services/api.service';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
-  peopleData: any; // Declare the peopleData property
+ // Declare the peopleData property
 
-  constructor(private apiService: APIService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.apiService.getPeople().subscribe((data) => {
-      this.peopleData = data.results;
-    });
+ 
+    };
   }
-}
+

@@ -1,41 +1,55 @@
+/* Style de base pour le footer */
 .footer {
-    background-color: #333; /* Couleur de fond du footer */
-    color: #fff; /* Couleur du texte */
-    padding: 1px 0; /* Espacement interne */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .social-icons {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  .social-icons li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .social-icons a {
-    color: #fff; /* Couleur de l'icône */
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff; /* Couleur de l'icône au survol */
-  }
-  
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Style des icônes de médias sociaux */
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+/* Style chic pour les icônes LinkedIn et GitHub */
+.bottom-icons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.linkedin-icon, .github-icon {
+  font-size: 36px;
+  color: #0077B5; /* Couleur LinkedIn */
+  margin: 0 10px;
+}
+
+.github-icon {
+  color: #333; /* Couleur GitHub */
+}
+
+/* Style interactif pour les icônes au survol */
+.social-icons a:hover {
+  color: #007bff; /* Couleur au survol */
+}

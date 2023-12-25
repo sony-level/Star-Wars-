@@ -1,0 +1,41 @@
+h2 {
+    color: #333;
+    font-size: 2em;
+  }
+  
+  .user-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .user-card {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 0.5em;
+    background-color: #f0f0f0;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .user-card.active {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  button {
+    margin-top: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
