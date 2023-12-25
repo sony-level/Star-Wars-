@@ -1,1 +1,44 @@
-<p>home works!</p>
+<div *ngIf="data" class="business-marketing">
+    <section class="section">
+      <h2>Films</h2>
+      <ul>
+        <li *ngFor="let film of data.films">{{film.title}}</li>
+      </ul>
+    </section>
+  
+    <section class="section">
+      <h2>People</h2>
+      <ul>
+        <li *ngFor="let person of data.people">{{person.name}}</li>
+      </ul>
+    </section>
+  
+    <section class="section">
+      <h2>Planets</h2>
+      <ul>
+        <li *ngFor="let planet of data.planets">{{data.planets}}</li>
+      </ul>
+    </section>
+  
+    <section class="section">
+      <h2>Starships</h2>
+      <ul>
+        <li *ngFor="let starship of data.starships">{{starship.name}}</li>
+      </ul>
+    </section>
+  
+    <section class="section">
+      <h2>Vehicles</h2>
+      <ul>
+        <li *ngFor="let vehicle of data.vehicles">{{vehicle.name}}</li>
+      </ul>
+    </section>
+  
+    <section class="section">
+      <h2>Species</h2>
+      <ul>
+        <li *ngFor="let specie of data.species">{{specie.name}}</li>
+      </ul>
+    </section>
+  </div>
+  

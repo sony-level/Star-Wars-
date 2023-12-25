@@ -53,20 +53,6 @@ export class APIService {
     return this.http.get(`${this.ApiUrl}/species/${id}/`);
  }
 
- saveDataToDB(data: any): void {
-    console.log("Saving data in DB");
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:9000/saveData", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        alert("Data saved!");
-      } else {
-        alert("Error while uploading file:\n" + xhr.responseText);
-      }
-    };
-    xhr.send(JSON.stringify(data));
- }
 
  getVehicles(): Observable<any> {
     return this.http.get<any>(`${this.ApiUrl}vehicles/`);

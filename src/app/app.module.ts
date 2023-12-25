@@ -11,13 +11,27 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { FilmsComponent } from './films/films.component';
+import { PeopleComponent } from './people/people.component';
+import { PlanetsComponent } from './planets/planets.component';
+import { StarshipsComponent } from './starships/starships.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { SpeciesComponent } from './species/species.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    FilmsComponent,
+    PeopleComponent,
+    PlanetsComponent,
+    StarshipsComponent,
+    VehiclesComponent,
+    SpeciesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
