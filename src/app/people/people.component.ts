@@ -8,28 +8,37 @@ import { APIService } from '../../../services/api.service';
 })
 export class PeopleComponent implements OnInit{
 
-  people: any[] = [];
-  currentIndex: number = 0
- 
+  
+  peopleList: any[] = [];
+  currentPage: number = 1;
 
-  constructor(private peopleService: APIService){
+  constructor(private apiService: APIService) { }
+
+  ngOnInit(): void {
+    this.loadPeople();
   }
 
- 
-ngOnInit() {
-
-  this.peopleService.getPeople().subscribe((data: any) => {
-    this.people = data.results;
-    console.log('People:', this.people);
-  });
-
-
-}
-showNextUser() {
-  if (this.currentIndex < this.people.length - 1) {
-    this.currentIndex++;
-  } else {
-    this.currentIndex = 0;
+  loadPeople(): void {
+    this.apiService.getPeople(this.currentPage).subscribe(
+      (data) => {
+        console.log('People:', data)
+        this.peopleList = data.results;
+      },
+      (error) => {
+        console.error('Error fetching people:', error);
+      }
+    );
   }
-}
+
+  nextPage(): void {
+    this.currentPage++;
+    this.loadPeople();
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.loadPeople();
+    }
+  }
 }

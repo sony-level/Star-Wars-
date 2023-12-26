@@ -1,18 +1,72 @@
-<!-- films.component.html -->
 <div *ngIf="films.length > 0">
-  <div *ngFor="let film of films">
-    <h3>{{ film.title }}</h3>
-    <p>Episode: {{ film.episode_id }}</p>
-    <p>Director: {{ film.director }}</p>
-    <p>Release Date: {{ film.release_date }}</p>
-    <hr />
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Episode</th>
+        <th>Director</th>
+        <th>Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let film of films">
+        <td>{{ film.title }}</td>
+        <td>{{ film.episode_id }}</td>
+        <td>{{ film.director }}</td>
+        <td>{{ film.release_date }}</td>
+      </tr>
+    </tbody>
+  </table>
 
   <div>
     <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
     <button (click)="loadNextPage()">Page suivante</button>
   </div>
+
+  <div *ngFor="let film of films">
+    <h4>Connections for {{ film.title }}</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Entity Type</th>
+          <th>Entity Name</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let characterUrl of film.characters">
+          <td>Character</td>
+          <td>{{ characterUrl.name }}</td>
+          <td><a [routerLink]="['/people', extractIdFromUrl(characterUrl)]">View Character</a></td>
+        </tr>
+        <tr *ngFor="let planetUrl of film.planets">
+          <td>Planet</td>
+          <td>{{ planetUrl.name }}</td>
+          <td><a [routerLink]="['/planets', extractIdFromUrl(planetUrl)]">View Planet</a></td>
+        </tr>
+        <tr *ngFor="let starshipUrl of film.starships">
+          <td>Starship</td>
+          <td>{{ starshipUrl.name }}</td>
+          <td><a [routerLink]="['/starships', extractIdFromUrl(starshipUrl)]">View Starship</a></td>
+        </tr>
+        <tr *ngFor="let vehicleUrl of film.vehicles">
+          <td>Vehicle</td>
+          <td>{{ vehicleUrl.name }}</td>
+          <td><a [routerLink]="['/vehicles', extractIdFromUrl(vehicleUrl)]">View Vehicle</a></td>
+        </tr>
+        <tr *ngFor="let speciesUrl of film.species">
+          <td>Species</td>
+          <td>{{ speciesUrl.name }}</td>
+          <td><a [routerLink]="['/species', extractIdFromUrl(speciesUrl)]">View Species</a></td>
+        </tr>
+        <!-- Add other links for additional entities with their corresponding paths -->
+      </tbody>
+    </table>
+  </div>
+  >
+
 </div>
+
 <div *ngIf="films.length === 0">
   <p>Aucun film trouvé.</p>
 </div>

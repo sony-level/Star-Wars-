@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'films', component: FilmsComponent },
   { path: 'people', component: PeopleComponent},
+  { path: 'people/:id', component: PeopleComponent},
   { path: 'planets', component: PlanetsComponent},
   { path: 'starships', component: StarshipsComponent},
   { path: 'vehicles', component: VehiclesComponent},

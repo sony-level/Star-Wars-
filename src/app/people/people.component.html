@@ -1,14 +1,62 @@
-<div *ngIf="people">
-    <h2>People</h2>
-    <div class="user-container">
-      <div class="user-card" *ngFor="let person of people; let i = index" [class.active]="i === currentIndex">
-        <h3>{{person.name}}</h3>
-        <p>Height: {{person.height}}</p>
-        <p>Mass: {{person.mass}}</p>
-        <p>Gender: {{person.gender}}</p>
-        <p>Birth Year: {{person.birth_year}}</p>
-      </div>
-    </div>
-    <button (click)="showNextUser()">Next User</button>
+<div>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <h1>People List</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Height (cm)</th>
+        <th>Mass (kg)</th>
+        <th>Hair Color</th>
+        <th>Skin Color</th>
+        <th>Eye Color</th>
+        <th>Birth Year</th>
+        <th>Gender</th>
+        <th>Homeworld</th>
+        <th>Films</th>
+        <th>Vehicles</th>
+        <th>Starships</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of peopleList">
+        <td>{{ person.name }}</td>
+        <td>{{ person.height }}</td>
+        <td>{{ person.mass }}</td>
+        <td>{{ person.hair_color }}</td>
+        <td>{{ person.skin_color }}</td>
+        <td>{{ person.eye_color }}</td>
+        <td>{{ person.birth_year }}</td>
+        <td>{{ person.gender }}</td>
+        <td><a href="{{ person.homeworld }}">{{ person.homeworld }}</a></td>
+        <td>
+          <ul *ngIf="person.films && person.films.length > 0">
+            <li *ngFor="let film of person.films">
+              <a href="{{ film }}">{{ film }}</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul *ngIf="person.vehicles && person.vehicles.length > 0">
+            <li *ngFor="let vehicle of person.vehicles">
+              <a href="{{ vehicle }}">{{ vehicle }}</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul *ngIf="person.starships && person.starships.length > 0">
+            <li *ngFor="let starship of person.starships">
+              <a href="{{ starship }}">{{ starship }}</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="center">
+    <button (click)="prevPage()">Previous Page</button>
+    <button (click)="nextPage()">Next Page</button>
   </div>
-  
+</div>

@@ -1,7 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { APIService } from '../../../services/api.service';
 
-
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -21,7 +20,7 @@ export class FilmsComponent implements OnInit{
   loadFilms() {
     this.apiService.getFilms(this.currentPage).subscribe(
       (data) => {
-        console.log('Filmss', data)
+        console.log('Films', data)
         this.films = data.results;
         // Si l'API renvoie des informations sur la pagination, vous pouvez ajuster la logique ici
       },
@@ -43,6 +42,11 @@ export class FilmsComponent implements OnInit{
       this.currentPage--;
       this.loadFilms();
     }
+  }
+
+  extractIdFromUrl(url: string): number {
+    const id = url.split('/').filter(Boolean).pop();
+    return id ? +id : 0;
   }
 }
 
