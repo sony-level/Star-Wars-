@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 
 })
 export class APIService {
+
    private ApiUrl = 'http://swapi.dev/api/';
+   
   getAllData: any;
 
 constructor(private http: HttpClient) {}
@@ -46,7 +48,7 @@ getAll(): Observable<any> {
    return this.http.get<any>(`${this.ApiUrl}planets/${id}/`);
  }
 
- // Species (Espèces)
+
  getSpecies(page?: number): Observable<any> {
    const pageParam = page ? `?page=${page}` : '';
    return this.http.get<any>(`${this.ApiUrl}species/${pageParam}`);

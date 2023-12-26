@@ -1,34 +1,18 @@
-<div class="film-container" *ngFor="let film of films">
-    <h2 class="film-title">{{ film.title }}</h2>
-    <p class="film-info">Director: {{ film.director }}</p>
-    <p class="film-info">Producer: {{ film.producer }}</p>
-    <p class="film-info">Release Date: {{ film.release_date }}</p>
-    <p class="film-info">Opening Crawl:</p>
-    <p class="film-opening-crawl">{{ film.opening_crawl }}</p>
-  
-    <h3 class="film-list-title">Characters:</h3>
-    <ul class="film-list">
-      <li class="film-list-item" *ngFor="let character of film.characters">{{ character }}</li>
-    </ul>
-  
-    <h3 class="film-list-title">Planets:</h3>
-    <ul class="film-list">
-      <li class="film-list-item" *ngFor="let planet of film.planets">{{ planet }}</li>
-    </ul>
-  
-    <h3 class="film-list-title">Species:</h3>
-    <ul class="film-list">
-      <li class="film-list-item" *ngFor="let species of film.species">{{ species }}</li>
-    </ul>
-  
-    <h3 class="film-list-title">Starships:</h3>
-    <ul class="film-list">
-      <li class="film-list-item" *ngFor="let starship of film.starships">{{ starship }}</li>
-    </ul>
-  
-    <h3 class="film-list-title">Vehicles:</h3>
-    <ul class="film-list">
-      <li class="film-list-item" *ngFor="let vehicle of film.vehicles">{{ vehicle }}</li>
-    </ul>
+<!-- films.component.html -->
+<div *ngIf="films.length > 0">
+  <div *ngFor="let film of films">
+    <h3>{{ film.title }}</h3>
+    <p>Episode: {{ film.episode_id }}</p>
+    <p>Director: {{ film.director }}</p>
+    <p>Release Date: {{ film.release_date }}</p>
+    <hr />
   </div>
-  
+
+  <div>
+    <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
+    <button (click)="loadNextPage()">Page suivante</button>
+  </div>
+</div>
+<div *ngIf="films.length === 0">
+  <p>Aucun film trouvé.</p>
+</div>

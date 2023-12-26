@@ -23,6 +23,11 @@ export class HomeComponent implements OnInit , OnDestroy{
     this.subscription = new Subscription();
   }
 
+  selectedFilm: any; 
+
+showFilmDetails(film: any) {
+  this.selectedFilm = film;
+}
   ngOnInit(){
   
     this.apiService.getAll().subscribe({

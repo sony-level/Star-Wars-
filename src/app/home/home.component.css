@@ -1,58 +1,50 @@
-/* Style des boîtes de contenu */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
 .content-box {
-  text-align: center; /* Centrer le contenu horizontalement */
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  transition: background-color 0.3s ease;
+  background-color: #000000dc;
+  border: 1px solid #000000cf;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s;
 }
 
-/* Au survol de la souris, changez la couleur de fond */
 .content-box:hover {
-  background-color: #e0e0e0;
-}
-/* Style de base pour les div contenant les listes */
-.content-box {
-  margin: 20px auto; /* Centrez horizontalement */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  text-align: center; /* Centrez le contenu */
+  background-color: #2980b9;
 }
 
-/* Au survol de la souris, changez la couleur de fond */
-.content-box:hover {
-  background-color: #e0e0e0;
+/* Style de l'image du film */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Style pour les titres h1 */
+/* Style des détails du film */
+.film-details,
+ul {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Style des listes non film */
 .content-box h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  color: #2c3e50;
 }
 
-/* Style pour les listes ul */
 .content-box ul {
-  list-style-type: none;
   padding: 0;
+  list-style: none;
 }
 
-/* Style pour les éléments li */
 .content-box li {
   margin-bottom: 10px;
-}
-
-/* Style pour les éléments h2 */
-.content-box h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-/* Style pour les paragraphes p */
-.content-box p {
-  font-size: 14px;
-  margin: 0;
 }
