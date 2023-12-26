@@ -7,58 +7,72 @@ import { Observable } from 'rxjs';
 
 })
 export class APIService {
+   private ApiUrl = 'http://swapi.dev/api/';
+  getAllData: any;
 
-  private ApiUrl = 'http://swapi.dev/api/';
+constructor(private http: HttpClient) {}
 
-
-  constructor(private http: HttpClient) { }
-
-
- 
-  getAll(): Observable<any> {
-    return this.http.get(`${this.ApiUrl}`);
+getAll(): Observable<any> {
+   return this.http.get<any>(this.ApiUrl);
  }
 
- getFilms(): Observable<any> {
-    return this.http.get<any>(`${this.ApiUrl}films/`);
+
+ getFilms(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}films/${pageParam}`);
  }
 
  getFilm(id: number): Observable<any> {
-    return this.http.get(`${this.ApiUrl}/films/${id}/`);
+   return this.http.get<any>(`${this.ApiUrl}films/${id}/`);
  }
 
- search(searchTerm: string, type?: string): Observable<any> {
-    let url = `${this.ApiUrl}?search=${searchTerm}&format=json`;
-    return this.http.get<any>(url);
- }
 
- getPeople(): Observable<any> {
-    return this.http.get<any>(`${this.ApiUrl}people/`);
+ getPeople(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}people/${pageParam}`);
  }
 
  getPerson(id: number): Observable<any> {
-    return this.http.get(`${this.ApiUrl}/people/${id}/`);
- }
-
- addPerson(person: any): Observable<any> {
-    const body = JSON.stringify(person);
-    return this.http.post('https://us-central1-lab4-85e63.cloudfunctions.net', body);
- }
-
- getPlanets(id: number): Observable<any> {
-    return this.http.get(`${this.ApiUrl}/planets/${id}/`);
- }
-
- getSpecies(id: number): Observable<any> {
-    return this.http.get(`${this.ApiUrl}/species/${id}/`);
+   return this.http.get<any>(`${this.ApiUrl}people/${id}/`);
  }
 
 
- getVehicles(): Observable<any> {
-    return this.http.get<any>(`${this.ApiUrl}vehicles/`);
+ getPlanets(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}planets/${pageParam}`);
  }
 
- getStarships(): Observable<any> {
-    return this.http.get<any>(`${this.ApiUrl}starships/`);
+ getPlanet(id: number): Observable<any> {
+   return this.http.get<any>(`${this.ApiUrl}planets/${id}/`);
+ }
+
+ // Species (Espèces)
+ getSpecies(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}species/${pageParam}`);
+ }
+
+ getSpecie(id: number): Observable<any> {
+   return this.http.get<any>(`${this.ApiUrl}species/${id}/`);
+ }
+
+ 
+ getStarships(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}starships/${pageParam}`);
+ }
+
+ getStarship(id: number): Observable<any> {
+   return this.http.get<any>(`${this.ApiUrl}starships/${id}/`);
+ }
+
+
+ getVehicles(page?: number): Observable<any> {
+   const pageParam = page ? `?page=${page}` : '';
+   return this.http.get<any>(`${this.ApiUrl}vehicles/${pageParam}`);
+ }
+
+ getVehicle(id: number): Observable<any> {
+   return this.http.get<any>(`${this.ApiUrl}vehicles/${id}/`);
  }
 }

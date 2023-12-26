@@ -1,10 +1,13 @@
 /* Style de base pour le footer */
 .footer {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px; /* Hauteur augmentée pour un meilleur affichage */
 }
 
 .container {
@@ -18,6 +21,7 @@
   list-style: none;
   padding: 0;
   margin: 10px 0;
+  text-align: left; /* Aligner les icônes à gauche */
 }
 
 .social-icons li {
@@ -35,21 +39,15 @@
 .bottom-icons {
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px; /* Ajuster la position à gauche */
 }
 
 .linkedin-icon, .github-icon {
   font-size: 36px;
-  color: #0077B5; /* Couleur LinkedIn */
-  margin: 0 10px;
+  color: #0077B5;
+  margin-right: 10px;
 }
 
 .github-icon {
-  color: #333; /* Couleur GitHub */
-}
-
-/* Style interactif pour les icônes au survol */
-.social-icons a:hover {
-  color: #007bff; /* Couleur au survol */
+  font-size: 24px; 
 }

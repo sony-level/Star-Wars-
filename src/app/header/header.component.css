@@ -1,36 +1,35 @@
-/* Style de base pour l'en-tête */
 header {
-  background-color: #333; 
-  padding: 10px 0;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
-}
-
-/* Style pour le titre dans l'en-tête */
-header h1 {
-  color: #fff;
-  font-size: 2em; 
-  margin: 0;
-  font-weight: bold; 
-}
-
-/* Style pour l'image dans l'en-tête */
-header img {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 50px;
-  height: auto;
-  border-radius: 50%; 
-}
-/* Style de base pour la navigation */
-nav ul {
   display: flex;
-  justify-content: center;
-  list-style-type: none;
-  margin: 0;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px; 
+  background-color: #000000; 
+  color: #fff; 
+}
+
+.left-section {
+  display: flex;
+  align-items: center; 
+  
+}
+
+.left-section img {
+  width: 40px; 
+  margin-right: 10px; 
+}
+
+.left-section h1 {
+  font-size: 24px; 
+  margin: 0; 
+}
+
+nav ul {
+  list-style-type: none; 
+  margin: 0; 
   padding: 0;
+}
+nav ul li {
+  display: inline-block;
 }
 
 /* Style pour les liens dans la navigation */

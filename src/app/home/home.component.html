@@ -1,44 +1,68 @@
-<div *ngIf="data" class="business-marketing">
-    <section class="section">
-      <h2>Films</h2>
-      <ul>
-        <li *ngFor="let film of data.films">{{film.title}}</li>
-      </ul>
-    </section>
-  
-    <section class="section">
-      <h2>People</h2>
-      <ul>
-        <li *ngFor="let person of data.people">{{person.name}}</li>
-      </ul>
-    </section>
-  
-    <section class="section">
-      <h2>Planets</h2>
-      <ul>
-        <li *ngFor="let planet of data.planets">{{data.planets}}</li>
-      </ul>
-    </section>
-  
-    <section class="section">
-      <h2>Starships</h2>
-      <ul>
-        <li *ngFor="let starship of data.starships">{{starship.name}}</li>
-      </ul>
-    </section>
-  
-    <section class="section">
-      <h2>Vehicles</h2>
-      <ul>
-        <li *ngFor="let vehicle of data.vehicles">{{vehicle.name}}</li>
-      </ul>
-    </section>
-  
-    <section class="section">
-      <h2>Species</h2>
-      <ul>
-        <li *ngFor="let specie of data.species">{{specie.name}}</li>
-      </ul>
-    </section>
-  </div>
-  
+<div class="content-box">
+  <h1>Liste des Films</h1>
+  <ul>
+    <li *ngFor="let film of films">
+      <h2>{{ film.title }}</h2>
+      <p>Episode: {{ film.episode_id }}</p>
+      <p>Réalisé par : {{ film.director }}</p>
+      <p>Produit par : {{ film.producer }}</p>
+      <p>Date de sortie : {{ film.release_date }}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="content-box">
+  <h1>Liste des Personnes</h1>
+  <ul>
+    <li *ngFor="let person of people">
+      <h2>{{ person.name }}</h2>
+      <p>Genre : {{ person.gender }}</p>
+      <p>Date de naissance : {{ person.birth_year }}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="content-box">
+  <h1>Liste des Planètes</h1>
+  <ul>
+    <li *ngFor="let planet of planets">
+      <h2>{{ planet.name }}</h2>
+      <p>Climat : {{ planet.climate }}</p>
+      <p>Terrain : {{ planet.terrain }}</p>
+      <p>Population : {{ planet.population }}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="content-box">
+  <h1>Liste des Espèces</h1>
+  <ul>
+    <li *ngFor="let species of species">
+      <h2>{{ species.name }}</h2>
+      <p>Classification : {{ species.classification }}</p>
+      <p>Langage : {{ species.language }}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="content-box">
+  <h1>Liste des Vaisseaux</h1>
+  <ul>
+    <li *ngFor="let starship of starships">
+      <h2>{{ starship.name }}</h2>
+      <p>Modèle : {{ starship.model }}</p>
+      <p>Manufacturier : {{ starship.manufacturer }}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="content-box">
+  <h1>Liste des Véhicules</h1>
+  <ul>
+    <li *ngFor="let vehicle of vehicles">
+      <h2>{{ vehicle.name }}</h2>
+      <p>Modèle : {{ vehicle.model }}</p>
+      <p>Manufacturier : {{ vehicle.manufacturer }}</p>
+    </li>
+  </ul>
+</div>
