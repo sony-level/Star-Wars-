@@ -7,12 +7,21 @@ import { Observable } from 'rxjs';
 
 })
 export class APIService {
+  searchStarships(searchQuery: any) {
+    throw new Error('Method not implemented.');
+  }
+
 
    private ApiUrl = 'http://swapi.dev/api/';
    
   getAllData: any;
 
 constructor(private http: HttpClient) {}
+
+searchByCategory(category: string, searchTerm: string): Observable<any> {
+  const url = `${this.ApiUrl}${category}/?search=${searchTerm}`;
+  return this.http.get(url);
+}
 
 getAll(): Observable<any> {
    return this.http.get<any>(this.ApiUrl);

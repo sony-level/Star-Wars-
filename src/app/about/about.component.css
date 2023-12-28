@@ -1,0 +1,55 @@
+/* Style pour la section "À propos" */
+.about-section {
+    background-color: #000000;
+    padding: 200px;
+    text-align: center;
+  }
+  
+  .about-section h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .about-section ul {
+    list-style-type: armenian;
+    padding: 0;
+  }
+  
+  .student-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .student-card {
+    background-color: #fefcfc;
+    color: #000000;
+    padding: 1px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .student-card img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10%;
+    margin:  auto ;
+  }
+  
+  .student-card h2 {
+    font-size: 18px;
+  }
+  
+  .student-card p {
+    font-size: 20px;
+    margin: 20px;
+    
+  }
+  

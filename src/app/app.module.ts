@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
  
 
 
@@ -18,6 +20,7 @@ import { StarshipsComponent } from './starships/starships.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { SpeciesComponent } from './species/species.component';
 import { AboutComponent } from './about/about.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +34,16 @@ import { AboutComponent } from './about/about.component';
     StarshipsComponent,
     VehiclesComponent,
     SpeciesComponent,
-    AboutComponent
+    AboutComponent,
+    SearchComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule 
 
 
   ],
