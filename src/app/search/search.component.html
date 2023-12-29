@@ -1,14 +1,19 @@
-<div class="recherche-container">
-  <label for="category">Catégorie :</label>
-  <select id="category" [(ngModel)]="selectedCategory">
-    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-  </select>
-
-  <label for="searchTerm">Terme de recherche :</label>
+<div class="header">
  
-<input type="text" id="searchTerm" [(ngModel)]="searchTerm"/><br/>
+    <input class="search-input" type="text" [(ngModel)]="searchTerm" (input)="onInputChange()" (keyup.enter)="search()" placeholder="Search...">
+    <select class="category-select" [(ngModel)]="selectedCategory">
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    <button class="search-button" (click)="search()">Search</button>
+  
+    <!-- Boîte de suggestions -->
+    <div *ngIf="showSuggestions" class="suggestions">
+      <ul>
+        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">{{ suggestion }}</li>
+      </ul>
+    </div>
+      
 
-  <button (click)="search()">Rechercher</button>
 
   <div *ngIf="searchResults.length > 0" class="results">
     <h2>Résultats de la recherche :</h2>

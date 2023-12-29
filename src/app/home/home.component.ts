@@ -19,14 +19,48 @@ export class HomeComponent implements OnInit , OnDestroy{
   starships: any[] = [];
   vehicles: any[] = [];
 
+  selectedFilm: any; 
+  selectedPerson: any;
+  selectedPlanet: any;
+  selectedSpecie: any;
+  selectedStarship: any;
+  selectedVehicle: any;
+
   constructor(private apiService: APIService) {
     this.subscription = new Subscription();
   }
 
-  selectedFilm: any; 
+ 
 
 showFilmDetails(film: any) {
   this.selectedFilm = film;
+}
+showPersonDetails(person: any) {
+  this.selectedPerson = person;
+}
+
+showPlanetDetails(planet: any) {
+  this.selectedPlanet = planet;
+}
+
+showSpecieDetails(specie: any) {
+  this.selectedSpecie = specie;
+}
+
+showStarshipDetails(starship: any) {
+  this.selectedStarship = starship;
+}
+
+showVehicleDetails(vehicle: any) {
+  this.selectedVehicle = vehicle;
+}
+
+changeColor(event: any) {
+  event.target.style.backgroundColor = 'lightblue';
+}
+
+resetColor(event: any) {
+  event.target.style.backgroundColor = '';
 }
   ngOnInit(){
   

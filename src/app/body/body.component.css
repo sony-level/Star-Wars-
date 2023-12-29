@@ -1,9 +1,18 @@
-body {
+.body {
+    background-color: black; /* Définit la couleur de fond à noir */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: white; /* Définit la couleur du texte en blanc (pour le contraste) */
 }
 
+.black-background {
+    background-color: #000; /* Noir */
+    color: #fff; /* Texte en blanc pour un meilleur contraste */
+    width: 100%; /* Largeur totale */
+    height: 100vh; /* Hauteur totale de la vue */
+    overflow: hidden; /* Cache le débordement du contenu s'il y en a */
+  }
 router-outlet {
     margin: 10px;
 }

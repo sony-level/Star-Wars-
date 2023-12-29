@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 
 })
 export class APIService {
+
+  suggestions: string[] = [];
   searchStarships(searchQuery: any) {
     throw new Error('Method not implemented.');
   }
@@ -86,4 +88,6 @@ getAll(): Observable<any> {
  getVehicle(id: number): Observable<any> {
    return this.http.get<any>(`${this.ApiUrl}vehicles/${id}/`);
  }
+
+
 }
