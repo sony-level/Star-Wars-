@@ -1,0 +1,215 @@
+.recherche-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.recherche-container label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.recherche-container select,
+.recherche-container input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.recherche-container button {
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.recherche-container button:hover {
+  background-color: #0056b3;
+}
+.results {
+  margin-top: 20px;
+}
+
+.results h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.results li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.suggestions li {
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}.recherche-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .recherche-container label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .recherche-container select,
+  .recherche-container input[type="text"] {
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .recherche-container button {
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .recherche-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  .results h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .results li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .suggestions {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .suggestions li {
+    cursor: pointer;
+    padding: 20px;
+    background-color: #0d0d0d;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.1s;
+  }
+  
+  .suggestions li:hover {
+    background-color: #000000;
+  }
+
+  /* Styles pour le header */
+.header {
+    background-color: #33333300;
+    color: #fff;
+    padding: 10px 20px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Styles pour la barre de recherche réduite dans le header */
+  .header .search-input {
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+    border: gainsboro;
+    border-radius: 5px;
+  }
+  
+  .header .category-select {
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .header .search-button {
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .header .search-button:hover {
+    background-color: #0056b3;
+  }
+  .suggestions {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(1, 1, 1, 0.2);
+    max-height: 200px;
+    margin-top: px;
+    overflow-y: auto;
+    z-index: 1;
+    width: 10%; /* Pour s'adapter à la largeur du champ de recherche */
+  }
+  
+  .suggestions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .suggestions li {
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  

@@ -1,0 +1,110 @@
+/* Styling du conteneur des cartes de films */
+.film-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Style des cartes de films */
+.film-card {
+ 
+  background-color: #000000;
+  border: 1px solid #0041f5;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+.film-card a {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Style des détails du film */
+.film-details {
+  background-color: rgba(6, 0, 0, 0.8);
+  border: 1px solid #00000000;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.film-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.film-details h3 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Style de la pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Style des cartes de connexion */
+.connection-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.connection-card h3 {
+  margin-top: 0;
+}
+
+.connection-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.connection-list li {
+  margin-bottom: 5px;
+}
+
+/* Styles spécifiques aux films */
+.film-card[data-id="1"] {
+  background-image: url('https://www.myconfinedspace.com/wp-content/uploads/2021/05/nw2t5zlvpe071.jpg');
+  background-size: cover;
+}
+
+.film-card[data-id="2"] {
+  background-image: url('https://media2.giphy.com/media/l1AsElwgf3qkDOotW/giphy.gif?cid=ecf05e47t7z2r37v297tg16a6x58jxoq7d3ityfervvsxk2i&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+  background-size: cover;
+}

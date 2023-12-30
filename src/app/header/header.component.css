@@ -1,0 +1,49 @@
+header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px; 
+  background-color: #ff0505; 
+  color: #fff; 
+}
+
+.left-section {
+  display: flex;
+  align-items: center; 
+  
+}
+
+.left-section img {
+  width: 40px; 
+  margin-right: 10px; 
+}
+
+.left-section h1 {
+  font-size: 24px; 
+  margin: 0; 
+}
+
+nav ul {
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px 15px; 
+  text-decoration: none;
+  transition: background-color 0.3s ease; 
+}
+
+nav ul li a:hover {
+  background-color: #07cbf2;
+  border-radius: 5px; 
+}
+
+
