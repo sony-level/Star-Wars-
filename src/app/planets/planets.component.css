@@ -1,0 +1,38 @@
+/* Style pour le paragraphe "planets works!" */
+p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Style pour le conteneur des cartes */
+  .planet-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Style pour chaque carte de planète */
+  .planet-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Répartit les cartes sur trois colonnes avec des marges */
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style pour le titre de chaque planète */
+  .planet-card h2 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour les informations de chaque planète */
+  .planet-card p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+  }
+  
