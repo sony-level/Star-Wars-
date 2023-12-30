@@ -29,7 +29,7 @@ body {
  }
  
  tbody tr:nth-child(even) {
-  background-color: #00ffdd;
+  background-color: #0b423a;
  }
  
  a {
@@ -44,7 +44,7 @@ body {
  button {
   background-color: #20252c;
   border: none;
-  color: #6c757d;
+  color: #0086fc;
   cursor: pointer;
   font-size: 1rem;
   padding: 0.5rem 1rem;

@@ -32,26 +32,19 @@
         <td><a href="{{ person.homeworld }}">{{ person.homeworld }}</a></td>
         <td>
           <ul *ngIf="person.films && person.films.length > 0">
-            <li *ngFor="let film of person.films">
-              <a href="{{ film }}">{{ film }}</a>
-            </li>
+            <li *ngFor="let film of person.films">{{ film.title }}</li>
           </ul>
         </td>
         <td>
           <ul *ngIf="person.vehicles && person.vehicles.length > 0">
-            <li *ngFor="let vehicle of person.vehicles">
-              <a href="{{ vehicle }}">{{ vehicle }}</a>
-            </li>
+            <li *ngFor="let vehicle of person.vehicles">{{ vehicle.name }}</li>
           </ul>
         </td>
         <td>
           <ul *ngIf="person.starships && person.starships.length > 0">
-            <li *ngFor="let starship of person.starships">
-              <a href="{{ starship }}">{{ starship }}</a>
-            </li>
+            <li *ngFor="let starship of person.starships">{{ starship.name }}</li>
           </ul>
         </td>
-      </tr>
     </tbody>
   </table>
 
