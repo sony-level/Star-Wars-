@@ -16,3 +16,9 @@
 router-outlet {
     margin: 10px;
 }
+
+.content {
+    min-height: calc(100% - 100px); /* La hauteur du contenu principal moins la hauteur du footer */
+    padding-bottom: 100px; /* Hauteur du footer */
+    background-color: #000;
+}

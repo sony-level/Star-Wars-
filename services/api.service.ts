@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +8,48 @@ import { Observable } from 'rxjs';
 })
 export class APIService {
 
-  suggestions: string[] = [];
-  searchStarships(searchQuery: any) {
-    throw new Error('Method not implemented.');
-  }
-
+  
 
    private ApiUrl = 'http://swapi.dev/api/';
    
   getAllData: any;
-
+  suggestions: string[] = [];
 constructor(private http: HttpClient) {}
 
+
+cacheData(key: string, data: any): void {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+getCachedData(key: string): any {
+  const cachedData = localStorage.getItem(key);
+  return cachedData ? JSON.parse(cachedData) : null;
+}
 searchByCategory(category: string, searchTerm: string): Observable<any> {
   const url = `${this.ApiUrl}${category}/?search=${searchTerm}`;
+  return this.http.get(url);
+
+  const cachedData = this.getCachedData(url);
+  if (cachedData) {
+    return new Observable((observer) => {
+      observer.next(cachedData);
+      observer.complete();
+      console.log(localStorage);
+    });
+  } else {
+
+    return this.http.get(url).pipe(
+      tap((data) => this.cacheData(url, data))
+    );
+  }
+}
+
+searchStarships(searchQuery: any) {
+  throw new Error('Method not implemented.');
+}
+
+
+getData(url: string): Observable<any> {
   return this.http.get(url);
 }
 
@@ -88,6 +116,8 @@ getAll(): Observable<any> {
  getVehicle(id: number): Observable<any> {
    return this.http.get<any>(`${this.ApiUrl}vehicles/${id}/`);
  }
+
+
 
 
 }

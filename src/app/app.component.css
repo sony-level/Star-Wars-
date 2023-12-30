@@ -3,8 +3,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding-bottom: 100px;
   }
-  
   /* Style pour chaque section (Films, People, Planets, etc.) */
   .data-section {
     flex: 1;
@@ -34,4 +34,3 @@
     margin: 0;
     font-size: 16px;
   }
-  
