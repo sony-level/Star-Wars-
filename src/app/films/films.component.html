@@ -1,10 +1,7 @@
 <div class="film-container">
   <div *ngFor="let film of films" class="film-card" (click)="showFilmDetails(film)">
     <h3>{{ film.title }}</h3>
-    <p>Année de sortie : {{ film.release_date }}</p>
-    <p>Réalisateur : {{ film.director }}</p>
-    <p>Producteur : {{ film.producer }}</p>
-    <a [routerLink]="'/film-details/' + film.id">Plus d'infos</a>
+
   </div>
 </div>
 
@@ -21,21 +18,21 @@
   <h3>Personnages :</h3>
   <ul>
     <li *ngFor="let character of characters">
-      {{ character.name }}
+      <a [routerLink]="['/people', character.url.split('/').slice(-2)[0]]">{{ character.name }}</a>
     </li>
   </ul>
   
   <h3>Planètes :</h3>
   <ul>
     <li *ngFor="let planet of planets">
-      {{ planet.name }}
+      <a [routerLink]="['/planet', planet.url.split('/').slice(-2)[0]]">{{ planet.name }}</a>
     </li>
   </ul>
   
   <h3>Vaisseaux spatiaux :</h3>
   <ul>
     <li *ngFor="let starship of starships">
-      {{ starship.name }}
+      <a [routerLink]="['/starship', starship.url.split('/').slice(-2)[0]]">{{ starship.name }}</a>
     </li>
   </ul>
   
@@ -54,8 +51,9 @@
   </ul>
 </div>
 
-<!-- Pagination -->
+<!-- Pagination 
 <div class="pagination">
   <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Page précédente</button>
   <button (click)="loadNextPage()">Page suivante</button>
 </div>
+-->

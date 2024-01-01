@@ -1,63 +1,29 @@
-body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
- }
- 
- h1 {
-  text-align: center;
-  margin-bottom: 1rem;
- }
- 
- table {
-  width: 100%;
-  border-collapse: collapse;
- }
- 
- th, td {
-  padding: 0.5rem;
-  text-align: left;
-  border-bottom: 1px solid #edf0f4;
- }
- 
- th {
-  background-color: #1a1e23;
-  color: #ffffff;
-  font-weight: bold;
- }
- 
- tbody tr:nth-child(even) {
-  background-color: #0b423a;
- }
- 
- a {
-  color: #0078f0;
-  text-decoration: none;
- }
- 
- a:hover {
-  color: #869099;
- }
- 
- button {
-  background-color: #20252c;
-  border: none;
-  color: #0086fc;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
-  transition: background-color 0.3s;
- }
- 
- button:hover {
-  background-color: #292f34;
- }
-
- .center {
+.planet-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  flex-wrap: wrap; /* Permet de passer à la ligne lorsque nécessaire */
+  justify-content: space-between; /* Espacement égal entre les éléments sur la première ligne */
+}
+
+.planet-card {
+  width: calc(50% - 20px);
+  margin-bottom: 20px; /* Espacement vertical entre les éléments */
+  border: 1px solid #ccc;
+  padding: 20px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.planet-card h2, .planet-card h3, .planet-card p {
+  margin: 0;
+}
+
+.planet-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.planet-card li {
+  margin-bottom: 5px;
 }

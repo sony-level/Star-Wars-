@@ -1,13 +1,63 @@
-
-<div class="planet-cards">
-  <ul>
-    <li *ngFor="let planet of planets">
-      <div class="planet-card">
-        <h2>{{ planet.name }}</h2>
-        <p>Population: {{ planet.population }}</p>
-        <p>Climate: {{ planet.climate }}</p>
-        <p>Terrain: {{ planet.terrain }}</p>
+<div class="row">
+  <div class="col s2 planet-container">
+    <div *ngFor="let planet of planets" class="col s5 m2">
+      <div class="card planet-card" (click)="getPlanetDetails(planet.url)">
+        <div class="card-content">
+          <span class="card-title">{{ planet.name }}</span>
+        
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
+</div>
+
+<h1> </h1>
+<h1> </h1>
+
+
+<div *ngIf="selectedPlanet" class="row">
+  <div class="col s2 m6">
+    <div class="card planet-card">
+      <div class="card-content">
+        <span class="card-title">
+          <h1>Détails de la Planète : {{ selectedPlanet.name }} </h1>
+        
+        </span>
+        <p>Population: {{ selectedPlanet.population }}</p>
+        <p>Terrain: {{ selectedPlanet.terrain }}</p>
+        <p>Climate: {{ selectedPlanet.climate }}</p>
+        <p>Created: {{ selectedPlanet.created }}</p>
+        <p>Diameter: {{ selectedPlanet.diameter }}</p>
+        <p>Rotation Period: {{ selectedPlanet.rotation_period }}</p>
+        <p>Orbital Period: {{ selectedPlanet.orbital_period }}</p>
+        <p>Gravity: {{ selectedPlanet.gravity }}</p>
+        <p>Surface Water: {{ selectedPlanet.surface_water }}</p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="row">
+  <div class="col s12 m6">
+    <h2>Résidents</h2>
+    <ul class="collection" *ngIf="residents && residents.length > 0">
+      <li *ngFor="let resident of residents" class="collection-item">
+        <a [routerLink]="['/people', resident.url.split('/').slice(-2)[0]]">{{ resident.name }}</a>
+      </li>
+    </ul>
+    <p *ngIf="!residents || residents.length === 0">Aucun résident trouvé.</p>
+  </div>
+  
+
+  <div class="col s2 m6">
+    <h2>Films</h2>
+    <ul class="collection" *ngIf="films && films.length > 0">
+      <li *ngFor="let film of films" class="collection-item">
+        <a [routerLink]="['/films', film.url.split('/').slice(-2)[0]]">{{ film.title }}</a>
+      </li>
+    </ul>
+    <p *ngIf="!films || films.length === 0">Aucun film trouvé .</p>
+  </div>
+  
+</div>
 </div>

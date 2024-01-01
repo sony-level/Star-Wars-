@@ -10,7 +10,10 @@ export class PlanetsComponent {
 
   
   planets: any[] = [];
- 
+  id: number = 0; 
+  selectedPlanet: any = null;
+  residents: any[] = [];
+  films: any[] = [];
 
   constructor(private planetService: APIService) { }
 
@@ -20,5 +23,33 @@ export class PlanetsComponent {
       console.log('Planets:', this.planets);
     });
   }
-  id: number = 0; // Change the type of 'id' to 'number'
+ 
+
+  getPlanetDetails(url: string): void {
+    this.planetService.getData(url).subscribe((planetData: any) => {
+      this.selectedPlanet = planetData;
+      this.getResidentsAndFilms(planetData.residents, planetData.films);
+    });
+}
+
+
+getResidentsAndFilms(residentsUrls: string[], filmsUrls: string[]): void {
+  this.residents = [];
+  this.films = [];
+
+  // Récupérer les détails des résidents
+  residentsUrls.forEach((residentUrl: string) => {
+    this.planetService.getData(residentUrl).subscribe((residentData: any) => {
+      this.residents.push(residentData);
+    });
+  });
+
+  // Récupérer les détails des films
+  filmsUrls.forEach((filmUrl: string) => {
+    this.planetService.getData(filmUrl).subscribe((filmData: any) => {
+      this.films.push(filmData);
+    });
+  });
+}
+
 }

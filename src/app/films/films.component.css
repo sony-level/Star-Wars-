@@ -1,5 +1,5 @@
 /* Styling du conteneur des cartes de films */
-.film-container {
+.film-container { 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -36,6 +36,7 @@
 
 /* Style des détails du film */
 .film-details {
+  overflow-y: scroll;
   background-color: rgba(6, 0, 0, 0.8);
   border: 1px solid #00000000;
   border-radius: 8px;
@@ -45,11 +46,13 @@
 }
 
 .film-details h2 {
+  
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .film-details h3 {
+ 
   font-size: 18px;
   margin-top: 20px;
 }

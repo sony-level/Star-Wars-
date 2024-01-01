@@ -1,38 +1,51 @@
-/* Style pour le paragraphe "planets works!" */
-p {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  /* Style pour le conteneur des cartes */
-  .planet-cards {
+/* Style de la container des cartes de planètes */
+.planet-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
   }
   
-  /* Style pour chaque carte de planète */
+  /* Style des cartes de planètes */
   .planet-card {
-    border: 1px solid #ccc;
+    background-color: #000000;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
-    margin: 10px;
-    width: calc(33.33% - 20px); /* Répartit les cartes sur trois colonnes avec des marges */
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
   
-  /* Style pour le titre de chaque planète */
-  .planet-card h2 {
-    font-size: 20px;
+  .planet-card:hover {
+    transform: scale(1.05);
+    background-color: #ffcc80; /* Couleur de fond au survol */
+  }
+  
+  /* Style des détails de la planète */
+  .planet-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .planet-details h3 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  /* Style des listes de résidents et de films */
+  .collection-item {
+    padding: 5px;
+  }
+  
+  .collection-item a {
     color: #007bff;
-    margin-bottom: 10px;
+    text-decoration: none;
   }
   
-  /* Style pour les informations de chaque planète */
-  .planet-card p {
-    font-size: 16px;
-    color: #333;
-    margin: 5px 0;
+  .collection-item a:hover {
+    text-decoration: underline;
   }
   

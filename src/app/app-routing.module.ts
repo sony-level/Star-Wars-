@@ -16,12 +16,17 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'films', component: FilmsComponent },
   { path: 'people', component: PeopleComponent},
-  { path: 'people/:id', component: PeopleComponent},
   { path: 'planets', component: PlanetsComponent},
   { path: 'starships', component: StarshipsComponent},
   { path: 'vehicles', component: VehiclesComponent},
   { path: 'species', component: SpeciesComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'people/:id', component: PeopleComponent},
+  { path: 'planets/indefined', component: PlanetsComponent},
+  { path: 'starships/:id', component: StarshipsComponent},
+  { path: 'vehicles/:id', component: VehiclesComponent},
+  { path: 'species/:id', component: SpeciesComponent},
+  { path: 'films/:id', component: FilmsComponent},
   { path: '', redirectTo: '/Home', pathMatch: 'full' }
 
 ];
