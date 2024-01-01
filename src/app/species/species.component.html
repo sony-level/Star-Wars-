@@ -1,1 +1,47 @@
-<p>species works!</p>
+<div class="container">
+    <h1>Liste des Espèces</h1>
+    <div class="row">
+        <div *ngFor="let specie of speciesData" class="col s12 m6">
+            <div class="card" (click)="showSpecieDetails(specie)">
+                <div class="card-content">
+                    <h2>{{ specie.name }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedSpecie" class="specie-details">
+        <h2>Détails de l'espèce: {{ selectedSpecie.name }}</h2>
+        <p>Classification : {{ selectedSpecie.classification }}</p>
+        <p>Designation : {{ selectedSpecie.designation }}</p>
+        <p>Hauteur moyenne : {{ selectedSpecie.average_height }}</p>
+        <p>Couleurs de peau : {{ selectedSpecie.skin_colors }}</p>
+        <p>Couleurs de cheveux : {{ selectedSpecie.hair_colors }}</p>
+        <p>Couleurs des yeux : {{ selectedSpecie.eye_colors }}</p>
+        <p>Espérance de vie moyenne : {{ selectedSpecie.average_lifespan }} années</p>
+        <p>Langue : {{ selectedSpecie.language }}</p>
+
+        <h3>Personnes :</h3>
+        <ul>
+            <li *ngFor="let person of people">
+                <a [routerLink]="['/person', person.url.split('/').slice(-2, -1)[0]]">{{ person.name }}</a>
+            </li>
+        </ul>
+
+        <!-- Affichage des films -->
+        <h3>Films :</h3>
+        <ul>
+            <li *ngFor="let film of films">
+                <a [routerLink]="['/films', film.url.split('/').slice(-2, -1)[0]]">{{ film.title }}</a>
+            </li>
+        </ul>
+
+        <p>Créé le : {{ selectedSpecie.created }}</p>
+        <p>Edité le : {{ selectedSpecie.edited }}</p>
+    </div>
+
+    <div class="pagination">
+        <button (click)="loadPreviousPage()" [disabled]="currentPage === 1" class="waves-effect waves-light btn">Page précédente</button>
+        <button (click)="loadNextPage()" class="waves-effect waves-light btn">Page suivante</button>
+    </div>
+</div>
