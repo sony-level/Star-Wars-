@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { APIService } from 'services/api.service';
+import { APIService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-species',
@@ -22,7 +22,7 @@ export class SpeciesComponent {
   ngOnInit(): void {
     this. specieService.getSpecies().subscribe((data: any) => {
       this.speciesData = data.results;
-      console.log('les especes:' , data)
+      console.log('les species:' , data)
     });
 
     this.loadData(this.currentPage);

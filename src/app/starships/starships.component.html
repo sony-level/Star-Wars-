@@ -1,1 +1,74 @@
-<p>starships works!</p>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let starship of starships">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">{{ starship.name }}</h5>
+          </div>
+          <div class="card-body">
+            
+            <p class="card-text">Fabricant: {{ starship.manufacturer }}</p>
+         
+            <button class="btn btn-primary" (click)="showStarshipDetails(starship)">Détails</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Affichage des connexions du vaisseau sélectionné -->
+    <div class="row mt-4" *ngIf="selectedStarship">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Détails du vaisseau</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Nom: {{ selectedStarship.name }}</p>
+            <p class="card-text">Modèle: {{ selectedStarship.model }}</p>
+            <p class="card-text">Fabricant: {{ selectedStarship.manufacturer }}</p>
+            <p class="card-text">Longueur: {{ selectedStarship.length }} mètres</p>
+            <p class="card-text">Coût en crédits: {{ selectedStarship.cost_in_credits }}</p>
+            <p class="card-text">Vitesse atmosphérique maximale: {{ selectedStarship.max_atmosphering_speed }}</p>
+            <p class="card-text">Équipage: {{ selectedStarship.crew }}</p>
+            <p class="card-text">Passagers: {{ selectedStarship.passengers }}</p>
+            <p class="card-text">Capacité de chargement: {{ selectedStarship.cargo_capacity }}</p>
+            <p class="card-text">Consommables: {{ selectedStarship.consumables }}</p>
+            <p class="card-text">Hyperdrive Rating: {{ selectedStarship.hyperdrive_rating }}</p>
+            <p class="card-text">MGLT: {{ selectedStarship.MGLT }}</p>
+            <p class="card-text">Classe de vaisseau: {{ selectedStarship.starship_class }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+     <!-- Affichage des connexions (films, personnes, planètes) -->
+     <h2>Connexions</h2>
+
+     <div class="card">
+       <div class="card-body">
+         <h5 class="card-title">Pilotes</h5>
+         <ul>
+           <li *ngFor="let person of people">
+             <a [routerLink]="['/people', person.url.split('/').pop()]" >{{ person.name }}</a>
+           </li>
+         </ul>
+       </div>
+     </div>
+   
+     <div class="card">
+       <div class="card-body">
+         <h5 class="card-title">Films</h5>
+         <ul>
+           <li *ngFor="let film of films">
+             <a [routerLink]="['/films', film.url.split('/').pop()]" >{{ film.title }}</a>
+           </li>
+         </ul>
+       </div>
+     </div>
+
+  </div>
+  
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary mr-2" (click)="loadPreviousPage()" [disabled]="currentPage === 1">Précédent</button>
+    <button class="btn btn-primary" (click)="loadNextPage()" [disabled]="starships.length === 0">Suivant</button>
+  </div>
