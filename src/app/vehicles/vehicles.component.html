@@ -1,1 +1,57 @@
-<p>vehicles works!</p>
+<div class="container">
+    <h1>Liste des Véhicules</h1>
+    <div class="row">
+      <div *ngFor="let vehicle of vehiclesData" class="col-12 col-md-6">
+        <div class="card" (click)="showVehicleDetails(vehicle)">
+          <div class="card-body">
+            <h5 class="card-title">{{ vehicle.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectedVehicle" class="vehicle-details">
+      <div class="vehicle-header">
+        <h2>Détails du Véhicule : {{ selectedVehicle.name }}</h2>
+      </div>
+      <div class="vehicle-info">
+        <p><strong>Modèle :</strong> {{ selectedVehicle.model }}</p>
+        <p><strong>Cout :</strong> {{ selectedVehicle.cost_in_credits }}</p>
+        <p><strong>Fabricant :</strong> {{ selectedVehicle.manufacturer }}</p>
+        <p><strong>Vitesse atmosphérique maximale :</strong> {{ selectedVehicle.max_atmosphering_speed }}</p>
+        <p><strong>Longueur :</strong> {{ selectedVehicle.length }} mètres</p>
+        <p><strong>Capacité de charge :</strong> {{ selectedVehicle.cargo_capacity }} kg</p>
+        <p><strong>Passagers :</strong> {{ selectedVehicle.passengers }}</p>
+        <p><strong>Equipage :</strong> {{ selectedVehicle.crew }}</p>
+        <p><strong>Classe de véhicule :</strong> {{ selectedVehicle.vehicle_class }}</p>
+      </div>
+
+      <div class="vehicle-pilots">
+        <h3>Pilotes :</h3>
+        <ul>
+          <li *ngFor="let pilot of pilots">
+            <a [routerLink]="['/people', pilot.url.split('/').slice(-2)[0]]">{{ pilot.name }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vehicle-films">
+        <h3>Films :</h3>
+        <ul>
+          <li *ngFor="let film of films">
+            <a [routerLink]="['/films', film.url.split('/').slice(-2)[0]]">{{ film.title }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vehicle-footer">
+        <p><strong>Créé le :</strong> {{ selectedVehicle.created }}</p>
+        <p><strong>Edité le :</strong> {{ selectedVehicle.edited }}</p>
+      </div>
+    </div>
+  
+    <div class="pagination">
+      <button (click)="loadPreviousPage()" [disabled]="currentPage === 1" class="btn btn-primary">Page précédente</button>
+      <button (click)="loadNextPage()" class="btn btn-primary">Page suivante</button>
+    </div>
+</div>

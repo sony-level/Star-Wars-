@@ -1,105 +1,64 @@
+/* Styles pour la section de bienvenue */
 .welcome-section {
-  background-color: #000000;
-  padding: 20px;
-  text-align: center;
+  background-color: #000000cb;
+  padding: 60px 0;
 }
 
 .welcome-section h1 {
-  font-size: 24px;
-  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .welcome-section p {
-  font-size: 16px;
-  color: #ffffff;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-}
-
-.card {
-  background-color: #000000;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  width: 300px;
-  height: 200px;
-  transition: background-color 0.3s;
-  overflow: hidden;
-}
-
-.card:hover {
-  background-color: #f0f0f0;
-}
-
-.category-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-}
-
+/* Styles pour les cartes de catégories */
 .category-card {
-  padding: 20px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 250px;
+  display: flex;
+  justify-content: center; /* Centrer verticalement */
+  align-items: center; 
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #ffffff;
+.category-card:hover {
+  transform: scale(1.05);
 }
 
-p {
-  font-size: 1rem;
-  color: #ffffff;
+.category-card .card-body {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 15px;
+  text-align: center;
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.card:nth-child(1) {
-  background-image: url('https://64.media.tumblr.com/7293b381dc8ad14f2fd4b72b5e19d242/tumblr_nz21q9omRJ1t2rlsro1_400.gifv');
- 
+.category-card h2 {
+  color: #3c00ff;
+  font-size: 24px;
+  margin: 0;
 }
 
-/* People */
-.card:nth-child(2) {
-  background-image: url('https://media2.giphy.com/media/l41lNasuaGEgHNM8E/giphy.gif?cid=ecf05e47pv7rflermh1u3jhwwxcsby58upgberq24leak7lm&ep=v1_gifs_search&rid=giphy.gif&ct=g');
-
+.category-card p {
+  color: #a4a4a4;
+  font-size: 18px;
+  margin: 10px 0 20px;
 }
 
-/* Planets */
-.card:nth-child(3) {
-  background-image: url('https://media0.giphy.com/media/11EnpDAuuLc5vq/giphy.gif?cid=ecf05e476nstlctmgsagcz36urln1v3x2cj6oglabcmjryzo&ep=v1_gifs_search&rid=giphy.gif&ct=g');
-
+/* Styles pour le container */
+.container {
+  padding: 30px;
 }
 
-/* Species */
-.card:nth-child(4) {
-  background-image: url('https://media1.giphy.com/media/xTiIzAXqvtYBwPlh3W/giphy.gif?cid=ecf05e4768ab34uezqp2f0rd8gvmkycp3jqhjrrpalixpoy1&ep=v1_gifs_search&rid=giphy.gif&ct=g');
-
-}
-
-/* Starships */
-.card:nth-child(5) {
-  background-image: url('https://media1.giphy.com/media/rM29DuEsknCiK1lifq/giphy.gif?cid=ecf05e47d4xr0n9mcvjdakrb0qbzsj8n4p9eayyec32851ey&ep=v1_gifs_search&rid=giphy.gif&ct=g');
-
-}
-
-/* Vehicles */
-.card:nth-child(6) {
-  background-image: url('https://media2.giphy.com/media/xT1R9SOmaiTd47ocso/giphy.gif?cid=ecf05e47ow9t2259n6vr6ebbspj1oxi835gusk3y8kfzz4ju&ep=v1_gifs_search&rid=giphy.gif&ct=g');
-
+.row {
+  margin-top: 50px;
 }

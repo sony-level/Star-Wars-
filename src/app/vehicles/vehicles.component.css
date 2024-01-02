@@ -1,0 +1,45 @@
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+
+.vehicle-details {
+    background-color: #000000;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .vehicle-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .vehicle-info {
+    padding: 10px;
+  }
+  
+  .vehicle-pilots,
+  .vehicle-films {
+    margin-top: 20px;
+  }
+  
+  .vehicle-footer {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+  }

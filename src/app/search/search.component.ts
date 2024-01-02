@@ -102,7 +102,7 @@ export class SearchComponent implements OnInit{
     this.searchTerm = '';
     this.searchResults = [];
     this.searchSubject.pipe(
-      debounceTime(3), // Attendre 30ms après que l'utilisateur ait arrêté de taper
+      debounceTime(1), // Attendre 10ms après que l'utilisateur ait arrêté de taper
       filter((term: string) => !!term),
       distinctUntilChanged(), // Ne pas faire de requête si le terme de recherche n'a pas changé
       switchMap((term: string) => this.apiService.searchByCategory(this.selectedCategory, term))

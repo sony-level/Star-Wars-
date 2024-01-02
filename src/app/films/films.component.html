@@ -1,55 +1,67 @@
-<div class="film-container">
-  <div *ngFor="let film of films" class="film-card" (click)="showFilmDetails(film)">
-    <h3>{{ film.title }}</h3>
+<div class="container">
+  <h1 class="mt-4">Liste des Films</h1>
+  <div class="row">
+    <div *ngFor="let film of films" class="col-md-4 mb-3">
+      <div class="card" (click)="showFilmDetails(film)" [ngClass]="{'selected-film': film === selectedFilm}">
+        <div class="card-body">
+          <h3 class="card-title">{{ film.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Détails du film (affichés lorsqu'on clique sur une carte) -->
+  <div *ngIf="selectedFilm" class="film-details mt-4">
+    <h2>Détails du film : {{ selectedFilm.title }}</h2>
+    <p>Année de sortie : {{ selectedFilm.release_date }}</p>
+    <p>Nombre Episode : {{ selectedFilm.episode_id }}</p>
+    <p>Edité le : {{ selectedFilm.edited }}</p>
+    <p>Réalisateur : {{ selectedFilm.director }}</p>
+    <p>Producteur : {{ selectedFilm.producer }}</p>
+    <p>Description : {{ selectedFilm.opening_crawl }}</p>
+
+    <h3>Personnages :</h3>
+    <ul>
+      <li *ngFor="let character of characters">
+        <a [routerLink]="['/people', character.url.split('/').slice(-2)[0]]">{{ character.name }}</a>
+      </li>
+    </ul>
+
+    <h3>Planètes :</h3>
+    <ul>
+      <li *ngFor="let planet of planets">
+        <a [routerLink]="['/planet', planet.url.split('/').slice(-2)[0]]">{{ planet.name }}</a>
+      </li>
+    </ul>
+
+    <h3>Vaisseaux spatiaux :</h3>
+    <ul>
+      <li *ngFor="let starship of starships">
+        <a [routerLink]="['/starship', starship.url.split('/').slice(-2)[0]]">{{ starship.name }}</a>
+      </li>
+    </ul>
+
+    <h3>Véhicules :</h3>
+    <ul>
+      <li *ngFor="let vehicle of vehicles">
+        {{ vehicle.name }}
+      </li>
+    </ul>
+
+    <h3>Espèces :</h3>
+    <ul>
+      <li *ngFor="let specie of species">
+        {{ specie.name }}
+      </li>
+    </ul>
   </div>
 </div>
 
-<!-- Détails du film (affichés lorsqu'on clique sur une carte) -->
-<div *ngIf="selectedFilm" class="film-details">
-  <h2>Détails du film : {{ selectedFilm.title }}</h2>
-  <p>Année de sortie : {{ selectedFilm.release_date }}</p>
-  <p>Nombre Episode : {{ selectedFilm.episode_id }}</p>
-  <p>Edité le : {{selectedFilm.edited}}</p>
-  <p>Réalisateur : {{ selectedFilm.director }}</p>
-  <p>Producteur : {{ selectedFilm.producer }}</p>
-  <p>Description : {{ selectedFilm.opening_crawl}}</p>
 
-  <h3>Personnages :</h3>
-  <ul>
-    <li *ngFor="let character of characters">
-      <a [routerLink]="['/people', character.url.split('/').slice(-2)[0]]">{{ character.name }}</a>
-    </li>
-  </ul>
-  
-  <h3>Planètes :</h3>
-  <ul>
-    <li *ngFor="let planet of planets">
-      <a [routerLink]="['/planet', planet.url.split('/').slice(-2)[0]]">{{ planet.name }}</a>
-    </li>
-  </ul>
-  
-  <h3>Vaisseaux spatiaux :</h3>
-  <ul>
-    <li *ngFor="let starship of starships">
-      <a [routerLink]="['/starship', starship.url.split('/').slice(-2)[0]]">{{ starship.name }}</a>
-    </li>
-  </ul>
-  
-  <h3>Véhicules :</h3>
-  <ul>
-    <li *ngFor="let vehicle of vehicles">
-      {{ vehicle.name }}
-    </li>
-  </ul>
-  
-  <h3>Espèces :</h3>
-  <ul>
-    <li *ngFor="let specie of species">
-      {{ specie.name }}
-    </li>
-  </ul>
-</div>
+
+
+
+
 
 <!-- Pagination 
 <div class="pagination">

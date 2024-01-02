@@ -1,8 +1,41 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000; /* Fond noir */
+            color: #fff; /* Couleur du texte en blanc (pour contraster avec le fond noir) */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Hauteur minimale de l'écran visible */
+            margin: 0; /* Supprime les marges par défaut du corps */
+        }
 
-<app-header></app-header>
-<app-body></app-body>
-<div class="content">
-    <!-- Votre contenu ira ici -->
-  </div>
-<app-footer></app-footer>
+        .container {
+            flex-grow: 1; /* Fait en sorte que la container occupe tout l'espace disponible */
+        }
+
+        /* Ajoutez votre CSS personnalisé ici */
+    </style>
+    <title>Votre Projet Angular</title>
+</head>
+<body>
+    <app-header></app-header>
+
+    <div class="container">
+        <app-body></app-body>
+        <div class="content">
+            <!-- Votre contenu ira ici -->
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

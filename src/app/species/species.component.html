@@ -1,9 +1,9 @@
 <div class="container">
-    <h1>Liste des Espèces</h1>
+    <h1 class="text-center">Liste des Espèces</h1>
     <div class="row">
-        <div *ngFor="let specie of speciesData" class="col s12 m6">
+        <div *ngFor="let specie of speciesData" class="col-md-4 mb-4">
             <div class="card" (click)="showSpecieDetails(specie)">
-                <div class="card-content">
+                <div class="card-body">
                     <h2>{{ specie.name }}</h2>
                 </div>
             </div>
@@ -11,7 +11,7 @@
     </div>
 
     <div *ngIf="selectedSpecie" class="specie-details">
-        <h2>Détails de l'espèce: {{ selectedSpecie.name }}</h2>
+        <h2 class="text-center">Détails de l'espèce: {{ selectedSpecie.name }}</h2>
         <p>Classification : {{ selectedSpecie.classification }}</p>
         <p>Designation : {{ selectedSpecie.designation }}</p>
         <p>Hauteur moyenne : {{ selectedSpecie.average_height }}</p>
@@ -40,8 +40,8 @@
         <p>Edité le : {{ selectedSpecie.edited }}</p>
     </div>
 
-    <div class="pagination">
-        <button (click)="loadPreviousPage()" [disabled]="currentPage === 1" class="waves-effect waves-light btn">Page précédente</button>
-        <button (click)="loadNextPage()" class="waves-effect waves-light btn">Page suivante</button>
+    <div class="pagination text-center">
+        <button (click)="loadPreviousPage()" [disabled]="currentPage === 1" class="btn btn-primary">Page précédente</button>
+        <button (click)="loadNextPage()" class="btn btn-primary">Page suivante</button>
     </div>
 </div>

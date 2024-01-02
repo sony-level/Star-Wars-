@@ -1,58 +1,44 @@
-/* Style de base pour le footer */
-.footer {
-  background-color: #ed0202;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 20px; /* Hauteur augmentée pour un meilleur affichage */
-}
-
-
-.content {
-  padding-bottom: 50px; /* Crée un espace vide en bas de la page équivalent à la hauteur du footer */
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Style des icônes de médias sociaux */
-.social-icons {
-  list-style: none;
+/* Styles pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
   padding: 0;
-  margin: 10px 0;
-  text-align: left; /* Aligner les icônes à gauche */
 }
 
-.social-icons li {
-  display: inline-block;
-  margin-right: 10px;
+/* Styles pour le contenu */
+.container {
+  background-color: #080808;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 5px;
 }
 
-.social-icons a {
-  color: #fff;
-  text-decoration: none;
+.content h1 {
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
-/* Style chic pour les icônes LinkedIn et GitHub */
-.bottom-icons {
-  position: absolute;
-  bottom: 10px;
-  left: 20px; /* Ajuster la position à gauche */
+.content p {
+  font-size: 16px;
+  margin: 0;
 }
 
-.linkedin-icon, .github-icon {
-  font-size: 36px;
-  color: #0077B5;
-  margin-right: 10px;
+/* Styles pour le pied de page */
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 10px 0;
 }
 
-.github-icon {
-  font-size: 24px; 
+.footer p {
+  margin: 0;
+}
+
+/* Styles pour l'icône GitHub */
+.github-icon img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
 }

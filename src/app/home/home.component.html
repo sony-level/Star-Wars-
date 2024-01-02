@@ -1,59 +1,72 @@
-<div class="welcome-section">
-  <h1>Bienvenue dans l'API Star Wars (SWAPI)</h1>
-  <p>L'API SWAPI est une source de données sur l'univers Star Wars. Elle vous permet d'accéder à des informations sur les films, les personnages, les planètes, les espèces, les vaisseaux et les véhicules de l'univers Star Wars.</p>
+<content>
+<div class="welcome-section text-center py-5">
+  <h1 class="display-4">Bienvenue dans l'API Star Wars (SWAPI)</h1>
+  <p class="lead">L'API SWAPI est une source de données sur l'univers Star Wars. Elle vous permet d'accéder à des informations sur les films, les personnages, les planètes, les espèces, les vaisseaux et les véhicules de l'univers Star Wars.</p>
   <p>Explorez les différentes catégories ci-dessous pour en savoir plus :</p>
 </div>
 
-
-
 <div class="container">
- 
-  <div class="card">
-    <a routerLink="/films" class="category-link">
-      <div class="category-card">
-        <h2>Films</h2>
-        <p>Explore the Star Wars films</p>
-      </div>
-    </a>
-  </div>
-  <div class="card">
-    <a routerLink="/people" class="category-link">
-      <div class="category-card">
-        <h2>People</h2>
-        <p>Meet the characters of Star Wars</p>
-      </div>
-    </a>
-  </div>
-  <div class="card">
-    <a routerLink="/planets" class="category-link">
-      <div class="category-card">
-        <h2>Planets</h2>
-        <p>Discover the planets in the Star Wars universe</p>
-      </div>
-    </a>
-  </div>
-  <div class="card">
-    <a routerLink="/species" class="category-link">
-      <div class="category-card">
-        <h2>Species</h2>
-        <p>Learn about the different species in Star Wars</p>
-      </div>
-    </a>
-  </div>
-  <div class="card">
-    <a routerLink="/starships" class="category-link">
-      <div class="category-card">
-        <h2>Starships</h2>
-        <p>Explore the Star Wars starships</p>
-      </div>
-    </a>
-  </div>
-  <div class="card">
-    <a routerLink="/vehicles" class="category-link">
-      <div class="category-card">
-        <h2>Vehicles</h2>
-        <p>Discover the vehicles used in Star Wars</p>
-      </div>
-    </a>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <a routerLink="/films" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://64.media.tumblr.com/7293b381dc8ad14f2fd4b72b5e19d242/tumblr_nz21q9omRJ1t2rlsro1_400.gifv');">
+          <div class="card-body text-center">
+            <h2 class="h4">Films</h2>
+            <p>Explore the Star Wars films</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a routerLink="/people" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://media2.giphy.com/media/l41lNasuaGEgHNM8E/giphy.gif?cid=ecf05e47pv7rflermh1u3jhwwxcsby58upgberq24leak7lm&ep=v1_gifs_search&rid=giphy.gif&ct=g');">
+          <div class="card-body text-center">
+            <h2 class="h4">People</h2>
+            <p>Meet the characters of Star Wars</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a routerLink="/planets" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://media0.giphy.com/media/11EnpDAuuLc5vq/giphy.gif?cid=ecf05e476nstlctmgsagcz36urln1v3x2cj6oglabcmjryzo&ep=v1_gifs_search&rid=giphy.gif&ct=g');">
+          <div class="card-body text-center">
+            <h2 class="h4">Planets</h2>
+            <p>Discover the planets in the Star Wars universe</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a routerLink="/species" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://media1.giphy.com/media/xTiIzAXqvtYBwPlh3W/giphy.gif?cid=ecf05e4768ab34uezqp2f0rd8gvmkycp3jqhjrrpalixpoy1&ep=v1_gifs_search&rid=giphy.gif&ct=g');">
+          <div class="card-body text-center">
+            <h2 class="h4">Species</h2>
+            <p>Learn about the different species in Star Wars</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a routerLink="/starships" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://media1.giphy.com/media/rM29DuEsknCiK1lifq/giphy.gif?cid=ecf05e47d4xr0n9mcvjdakrb0qbzsj8n4p9eayyec32851ey&ep=v1_gifs_search&rid=giphy.gif&ct=g');">
+          <div class="card-body text-center">
+            <h2 class="h4">Starships</h2>
+            <p>Explore the Star Wars starships</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a routerLink="/vehicles" class="category-link text-decoration-none text-dark">
+        <div class="card category-card shadow" style="background-image: url('https://media2.giphy.com/media/xT1R9SOmaiTd47ocso/giphy.gif?cid=ecf05e47ow9t2259n6vr6ebbspj1oxi835gusk3y8kfzz4ju&ep=v1_gifs_search&rid=giphy.gif&ct=g');">
+          <div class="card-body text-center">
+            <h2 class="h4">Vehicles</h2>
+            <p>Discover the vehicles used in Star Wars</p>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
+</content>

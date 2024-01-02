@@ -111,3 +111,12 @@
   background-image: url('https://media2.giphy.com/media/l1AsElwgf3qkDOotW/giphy.gif?cid=ecf05e47t7z2r37v297tg16a6x58jxoq7d3ityfervvsxk2i&ep=v1_gifs_search&rid=giphy.gif&ct=g');
   background-size: cover;
 }
+
+.selected-film {
+  background-color: #ffcc00; /* Couleur de surbrillance */
+  transition: background-color 0.3s; /* Transition fluide */
+}
+
+.selected-film:hover {
+  background-color: #ff9900; /* Couleur de surbrillance au survol */
+}
