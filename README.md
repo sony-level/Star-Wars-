@@ -33,7 +33,8 @@ L'API SWAPI est utilisée pour obtenir des informations sur l'univers Star Wars.
 
 Exemple de service Angular (../services/api.service.ts) :
 
-` import { Injectable } from '@angular/core';
+```typescript
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -51,7 +52,7 @@ export class apiService {
 
   // Ajoutez d'autres méthodes pour récupérer d'autres types de données (vaisseaux spatiaux, planètes, etc.)
 }
-`
+
 
 N'oubliez pas d'importer HttpClientModule dans votre module Angular (src/app/app.module.ts) et de configurer les autorisations CORS si nécessaire.
 
