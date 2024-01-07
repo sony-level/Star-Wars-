@@ -28,6 +28,33 @@ Angular CLI : https://angular.io/cli
 
 6. Ouvrez votre navigateur web et accédez à l'adresse `http://localhost:4200/` pour voir l'application en action.
 
+## Configuration de l'API SWAPI
+L'API SWAPI est utilisée pour obtenir des informations sur l'univers Star Wars. Assurez-vous que votre application Angular ait la configuration nécessaire pour effectuer des requêtes à l'API. Vous pouvez le faire dans un service Angular dédié pour gérer ces appels API.
+
+Exemple de service Angular (../services/api.service.ts) :
+
+` import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class apiService {
+  private apiUrl = 'https://swapi.dev/api';
+
+  constructor(private http: HttpClient) {}
+
+  getCharacter(characterId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/people/${characterId}`);
+  }
+
+  // Ajoutez d'autres méthodes pour récupérer d'autres types de données (vaisseaux spatiaux, planètes, etc.)
+}
+`
+
+N'oubliez pas d'importer HttpClientModule dans votre module Angular (src/app/app.module.ts) et de configurer les autorisations CORS si nécessaire.
+
 ## Utilisation de l'application
 
 L'application est conçue pour être conviviale et intuitive. Vous pouvez utiliser le menu de navigation pour accéder aux différentes sections de l'univers Star Wars, telles que les personnages, les vaisseaux spatiaux, les planètes, etc.
