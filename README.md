@@ -1,32 +1,61 @@
-<<<<<<< HEAD
-# Api-swapi-Movies-
-Le projet "Plateforme de Visualisation de Films avec Angular" vise à créer une application web robuste et conviviale permettant aux utilisateurs d'explorer et de découvrir des informations sur des films à partir d'une API dédiée. 
-=======
-# Star Wars
+# Star Wars API (SWAPI) Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+Ce projet est une application Angular qui utilise l'API SWAPI (Star Wars API) pour afficher des informations sur les personnages, les vaisseaux spatiaux, les planètes et d'autres éléments de l'univers Star Wars.  Veuillez noter que l'API SWAPI peut être sujette à des délais de réponse variables, en particulier lorsque vous effectuez des requêtes complexes ou lorsque le serveur est très sollicité.
 
-## Development server
+# Prérequis
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-## Code scaffolding
+Node.js :  https://nodejs.org/
+Angular CLI : https://angular.io/cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuration du projet
 
-## Build
+1. Assurez-vous d'avoir Node.js et npm installés sur votre système. Vous pouvez les télécharger depuis [nodejs.org](https://nodejs.org/).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Clonez ce dépôt en utilisant la commande suivante :
+ ` git clone https://github.com/sony-level/Star-Wars-.git`
 
-## Running unit tests
+ 
+3. Naviguez vers le répertoire du projet :
+    `cd Star-Wars-/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Installez les dépendances en exécutant la commande suivante :
+    `npm install`
 
-## Running end-to-end tests
+5. Une fois les dépendances installées, vous pouvez lancer l'application avec la commande :
+    `ng serve` ou `npm start`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+6. Ouvrez votre navigateur web et accédez à l'adresse `http://localhost:4200/` pour voir l'application en action.
 
-## Further help
+## Utilisation de l'application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> people
+L'application est conçue pour être conviviale et intuitive. Vous pouvez utiliser le menu de navigation pour accéder aux différentes sections de l'univers Star Wars, telles que les personnages, les vaisseaux spatiaux, les planètes, etc.
+
+## Affichage des données
+
+L'affichage de certaines données depuis l'API SWAPI peut prendre du temps en raison de la complexité des relations entre les entités Star Wars. Pour optimiser les performances, envisagez de mettre en cache ( Ce qui n'a âs encore ete fait pour le momemt) les données lorsque cela est possible ou d'implémenter une pagination pour réduire la charge de travail sur l'API.
+
+
+## Fonctionnalités principales
+
+- Affichage de la liste des personnages, vaisseaux spatiaux, planètes, etc., à partir de l'API SWAPI.
+- Recherche de personnages par nom.
+- Détails détaillés pour chaque élément, y compris les informations de base, les caractéristiques et les connexions.
+- Possibilité de filtrer et trier les éléments.
+
+## Contribution
+
+Si vous souhaitez contribuer à l'amélioration de cette application, n'hésitez pas à créer une branche, à apporter vos modifications et à soumettre une demande de fusion (pull request). Nous accueillons avec plaisir les contributions de la communauté.
+
+## Auteur
+
+Ce projet a été créé par [Level sony ](https://github.com/sony-level) et [Paul Estrade](https://github.com/PSTRD).
+
+## Licence
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+Amusez-vous bien à explorer l'univers Star Wars avec cette application Angular ! Si vous avez des questions ou des suggestions, n'hésitez pas à les partager. May the Force be with you!
