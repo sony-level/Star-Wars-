@@ -20,10 +20,10 @@
           <th>Eye Color</th>
           <th>Birth Year</th>
           <th>Gender</th>
-          <th>Homeworld</th>
           <th>Films</th>
           <th>Vehicles</th>
           <th>Starships</th>
+          <th>Species</th>
         </tr>
       </thead>
       <tbody>
@@ -36,22 +36,26 @@
           <td>{{ person.eye_color }}</td>
           <td>{{ person.birth_year }}</td>
           <td>{{ person.gender }}</td>
-          <td><a href="{{ person.homeworld }}">{{ person.homeworld }}</a></td>
           <td>
-            <ul *ngIf="person.films && person.films.length > 0">
-              <li *ngFor="let film of person.films">{{ film.title }}</li>
+            <ul>
+              <li *ngFor="let film of films">{{ film.title }}</li>
             </ul>
+          
           </td>
           <td>
             <ul *ngIf="person.vehicles && person.vehicles.length > 0">
-              <li *ngFor="let vehicle of person.vehicles">{{ vehicle.name }}</li>
+              <li *ngFor="let vehicle of vehicles">{{ vehicle.name }}</li>
             </ul>
           </td>
           <td>
-            <ul *ngIf="person.starships && person.starships.length > 0">
-              <li *ngFor="let starship of person.starships">{{ starship.name }}</li>
+            <ul>
+              <li *ngFor="let starship of starships">{{ starship.name }}</li>
             </ul>
           </td>
+          <td>
+            <ul *ngIf="person.species && person.species.length > 0">
+              <li *ngFor="let specie of personSpecies">{{ specie.name }}</li>
+            </ul>
         </tr>
       </tbody>
     </table>

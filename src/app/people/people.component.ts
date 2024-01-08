@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../../services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -17,10 +18,23 @@ export class PeopleComponent implements OnInit{
   personSpecies: any[] = [];
   selectedPerson: any;
 
-  constructor(private apiService: APIService) { }
+  person: any;
+  films: any[] = [];
+  starships: any[] = [];
+  vehicles: any[] = [];
+  species: any[] = [];
+
+  constructor(private route: ActivatedRoute, private apiService: APIService) { }
 
   ngOnInit(): void {
     this.loadPeople();
+
+    this.route.paramMap.subscribe(params => {
+      const personId = params.get('id');
+      if (personId) {
+        this.loadPersonDetails(personId);
+      }
+    });
   }
 
   loadPeople(): void {
@@ -93,6 +107,64 @@ export class PeopleComponent implements OnInit{
       }
     }
   }
+
+
+
+
+  loadPersonDetails(personId: string): void {
+    const id: number = parseInt(personId, 10); // Convert personId to a number
+    this.apiService.getPerson(id).subscribe(
+      (data) => {
+        this.person = data;
+        this.loadConnections(data);
+      },
+      (error) => {
+        console.error('Error fetching person details:', error);
+      }
+    );
+  }
+
+  loadConnections(person: any): void {
+    this.loadItems('films', person.films);
+    this.loadItems('starships', person.starships);
+    this.loadItems('vehicles', person.vehicles);
+    this.loadItems('species', person.species);
+  }
+
+  loadItems(type: string, urls: string[]): void {
+    const items: any[] = [];
+    urls.forEach((url: string) => {
+      this.apiService.getData(url).subscribe((data) => {
+        items.push(data);
+
+        if (items.length === urls.length) {
+          this.assignItems(type, items);
+        }
+      });
+    });
+  }
+
+  assignItems(type: string, items: any[]): void {
+    switch (type) {
+      case 'films':
+        this.films = items;
+        break;
+      case 'starships':
+        this.starships = items;
+        break;
+      case 'vehicles':
+        this.vehicles = items;
+        break;
+      case 'species':
+        this.species = items;
+        break;
+      default:
+        break;
+    }
+  }
+
+
+
   nextPage(): void {
     this.currentPage++;
     this.loadPeople();
