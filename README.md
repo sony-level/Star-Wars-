@@ -88,3 +88,5 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 ---
 
 Amusez-vous bien à explorer l'univers Star Wars avec cette application Angular ! Si vous avez des questions ou des suggestions, n'hésitez pas à les partager. May the Force be with you!
+
+avec [l’API SWAPI](https://swapi.dev/api) : https://swapi.dev/api
