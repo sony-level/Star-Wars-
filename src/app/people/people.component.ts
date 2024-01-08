@@ -58,35 +58,16 @@ export class PeopleComponent implements OnInit{
           personDetails.push(data);
   
           if (personDetails.length === urls.length) {
-            this.assignPersonDetails(type, personDetails);
+            this.assignItems(type, personDetails);
           }
         });
       });
     } else {
       // Aucune donnée disponible pour cette personne
-      this.assignPersonDetails(type, []);
+      this.assignItems(type, []);
     }
   }
-  
-  assignPersonDetails(type: string, details: any[]): void {
-    switch (type) {
-      case 'films':
-        this.personFilms = details;
-        break;
-      case 'starships':
-        this.personStarships = details;
-        break;
-      case 'vehicles':
-        this.personVehicles = details;
-        break;
-      case 'species':
-        this.personSpecies = details;
-        break;
-      // Ajoutez d'autres cas au besoin
-      default:
-        break;
-    }
-  }
+
 
   showPersonDetailsByFilm(film: any) {
     // Réinitialisez les détails des personnes
